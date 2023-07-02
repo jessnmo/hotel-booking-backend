@@ -31,7 +31,7 @@ app.use('/hotelRooms', hotelRoomsRoute)
 
 
 app.get('/', (req,res)=>{
-    res.send('test test')
+    res.send('test main page')
 })
 
 app.listen(8080, ()=>{
