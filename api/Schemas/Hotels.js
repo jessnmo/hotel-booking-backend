@@ -26,7 +26,7 @@ const HotelSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-      images:{
+    images:{
         type:[String] // it will be multiple images, in an array, each item in array will be a string
     },
     description:{

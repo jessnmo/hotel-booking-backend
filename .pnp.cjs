@@ -31,7 +31,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:16.3.1"],\
             ["express", "npm:4.18.2"],\
             ["mongoose", "npm:7.3.1"],\
-            ["nodemon", "npm:2.0.22"]\
+            ["nodemon", "npm:2.0.22"],\
+            ["prettier", "npm:2.8.8"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -961,7 +962,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:16.3.1"],\
             ["express", "npm:4.18.2"],\
             ["mongoose", "npm:7.3.1"],\
-            ["nodemon", "npm:2.0.22"]\
+            ["nodemon", "npm:2.0.22"],\
+            ["prettier", "npm:2.8.8"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -1699,6 +1701,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/picomatch-npm-2.3.1-c782cfd986-050c865ce8.zip/node_modules/picomatch/",\
           "packageDependencies": [\
             ["picomatch", "npm:2.3.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["prettier", [\
+        ["npm:2.8.8", {\
+          "packageLocation": "./.yarn/cache/prettier-npm-2.8.8-430828a36c-b49e409431.zip/node_modules/prettier/",\
+          "packageDependencies": [\
+            ["prettier", "npm:2.8.8"]\
           ],\
           "linkType": "HARD"\
         }]\
