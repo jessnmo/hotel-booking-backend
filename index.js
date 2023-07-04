@@ -28,6 +28,16 @@ app.use('/auth', authRoute)
 app.use('/users', usersRoute)
 app.use('/hotels', hotelsRoute)
 app.use('/hotelRooms', hotelRoomsRoute)
+app.use((error, req, res, next)=>{
+  const errorStatus = error.status || 500 //const errorStatus otherwise will be 500
+  const errorMessage = error.message || 'ERROR'
+  return res.status(errorStatus).json({
+    success:false,
+    status:errorStatus,
+    message:errorMessage,
+    stack:error.stack
+  })
+})
 
 
 app.get('/', (req,res)=>{
