@@ -33,9 +33,7 @@ The article on stackOverflow: https://stackoverflow.com/questions/31309759/what-
 
 Once the JWT is received, the verification will take its header and payload, and together with the secret that is still saved on the server, basically create a test signature. Together with the signature that was generated when JWT was received, we can compare the test and original signature to identify. Because the test signature will be different if any was modified. so no cheating there when authentificate! 
 
-**To generate a secret key using openSSL**
-
-openssl rand -base64 64
+**To generate a secret key using openSSL** in terminal: openssl rand -base64 64
 
 
 
