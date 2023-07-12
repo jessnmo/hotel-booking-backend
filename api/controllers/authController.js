@@ -1,6 +1,7 @@
 import User from '../Schemas/Users.js';
 import bcrypt from 'bcryptjs';
-import {errorHandling} from '../ultis/errorHandling.js'
+import {errorHandling} from '../ultis/errorHandling.js';
+import jwt from "jsonwebtoken"
 
 export const register = async(req, res,next)=>{
     try {
@@ -28,7 +29,14 @@ export const login = async(req, res, next)=>{
         const isCorrectPassword = await bcrypt.compare(req.body.password, existUser.password)
         if(!isCorrectPassword) return next(errorHandling(400, 'Wrong password, please try again'))
 
-        res.status(201).json(existUser)
+        const {password, isAdmin, ...otherDetails} = existUser._doc; 
+        //using ._doc is because all the user info is stored there when requesting log in
+        //uses object destructuring to extract the password and isAdmin properties 
+        //from the existUser object and assign them to the respective variables. 
+        //The rest of the properties are gathered into the otherDetails object. 
+        //This allows you to exclude the sensitive password and isAdmin fields when sending the response.
+        res.status(201).json({...otherDetails})
+
     }catch(error){
         next(error)
     }
