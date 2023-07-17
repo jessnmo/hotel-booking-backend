@@ -39,8 +39,7 @@ export const login = async(req, res, next)=>{
         //from the existUser object and assign them to the respective variables. 
         //The rest of the properties are gathered into the otherDetails object. 
         //This allows you to exclude the sensitive password and isAdmin fields when sending the response.
-        res.status(201).json({...otherDetails})
-
+        res.cookie("access_token",token, {httpOnly:true}).status(201).json({...otherDetails})
     }catch(error){
         next(error)
     }
